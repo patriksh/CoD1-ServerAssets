@@ -1,0 +1,90 @@
+Call Of Duty
+Linux Multiplayer Server Code
+Readme
+Last update: 2003-11-19
+=============================
+
+
+
+!! IMPORTANT !!
+Call of Duty Linux Server is NOT SUPPORTED by Activision Customer Support. Please do not call with any questions related to this free beta product.
+=============================
+
+
+
+
+INDEX: 
+1.	Known Issues
+2.	Server Commands
+3.	Installation Instructions
+4.	Running the server
+5.	Mailing List
+6.	Bug reports
+7.	FreeBSD
+8.	Running gdb
+=============================
+
+
+1. Known Issues:
+There is a known issues with the Linux Server code and Behind Enemy Lines Game Mode that will eventually cause the server to crash. Therefore, it is not recommended for Server Administrators of the Linux version of Call of Duty to run the "Behind Enemy Lines (BEL)" game type on their server.  We strongly advise Server Administrators to remove BEL from any map rotations and, to avoid players from voting to the BEL game type, Administrators might also consider disabling voting all together.    
+
+2. Server Commands:
+Usage for this code is very similar to Quake 3(TM) and Return to Castle Wolfenstein(TM) Linux server code. Most of the console commands, command lines, and cvars are identical.
+
+
+3. Installation Instructions:
+- Obtain the retail disc of Call of Duty.
+- Copy the contents of Disc One's "Setup/Data" directory to your server
+(there is a "localization.txt" file in the root of this directory,
+and a "main" subdirectory.)
+- Copy the contents of Disc Two's "Setup/Data" directory to your server
+(there is a "main" directory. Add it to the contents of the
+previous disc's "main” directory).
+- Alternately, you may install on Windows and copy the installed game to
+your Linux system, but many will opt to skip this step since the data
+files are uncompressed and easily accessible on the discs. Final
+installation size is around 1.1 gigabytes.
+- Unpack this archive in the root of the newly-copied tree, so
+"cod_lnxded" is in the same directory as "localization.txt" and
+"game.mp.i386.so" is in the "main" directory.
+
+4. Running the server:
+  cd /where/i/copied/callofduty
+  ./cod_lnxded
+
+When you see "Started tty console (use +set ttycon 0 to disable)", the
+server has started, but you need to start a map before the server will
+accept connections. At this point, type:
+
+  map mp_chateau
+
+("mp_chateau" being a given map's name).
+
+Now you should see your server in the in-game browser.
+
+There are a LOT of knobs to tweak to customize and automate your server,
+but it is beyond the scope of this documentation. Please refer to the
+admin manuals for any Quake 3(TM) based multiplayer game (including Quake 3
+Arena(TM), Return to Castle Wolfenstein(TM), etc.) for specifics.
+
+5. Mailing List:
+There is a mailing list for discussion and support of Call of Duty Linux
+Server. Send a blank email to cod-subscribe@icculus.org to get on the
+List. List archives can be seen at:
+
+   http://icculus.org/cgi-bin/ezmlm/ezmlm-cgi?38
+
+6. Bug reports:
+Bug reports should NOT be sent to the list. We have a web-based 
+bug tracking system for this. Please report any and all bugs you find so that we can be addressed. You can find the bug tracker here:
+
+   https://bugzilla.icculus.org/
+
+7. FreeBSD users: this server is known to work on FreeBSD with the Linux
+binary compatibility layer. If it doesn't, we consider it a bug and
+would appreciate the report since we did not test on FreeBSD ourselves.
+
+8. Running gdb: 
+Gdb is run from the shell with the command 'gdb' with the program name as a parameter, for example 'gdb eg', or you can use the file command once inside gdb to load a program for debugging, for example 'file eg'. Both of these assume you execute the commands from the same directory as the program. Once loaded, the program can be started with the gdb command 'run'.
+
+===

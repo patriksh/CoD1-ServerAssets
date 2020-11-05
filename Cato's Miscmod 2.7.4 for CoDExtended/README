@@ -1,0 +1,181 @@
+CoDaM MiscMod 2.7 - MINIMAL
+
+1) HOW TO INSTALL
+
+	codam\modlist.gsc:
+		level.topText = &"<your text>";
+		[[ register ]]( "Cato's MiscMod", codam\miscmod::main );
+		
+	!!!!!   File miscmod_bans.dat must be created in the main folder and writeable by the server (or it will crash).
+		The ban capabilities is low level and intended only for small servers or single standalone servers.
+		
+	NOTE:	Must be loaded before CoDaM_HamGoodies due to conflicting takeover (or any other mod for that matter).
+		This mod is not made compatible with other mods and only compatible with CoDExtended as is by php.
+
+2) CONFIGURATION
+
+	Some settings may support appending postfix to CVAR; such as "scr_mm_spawnprotection_<MAP or GAMETYPE> <value>" resulting in "scr_mm_spawnprotection_dm <value>" or "scr_mm_spawnprotection_mp_brecourt <value>".
+
+	// miscmod settings
+	set scr_miscmod ""			// BOOL - enable or disable miscmod
+
+	set scr_mm_shellshock ""		// BOOL - enable shellshock on player damage (disables instantkill / hitmarker / damagemarker) (DEFAULT: false)
+	set scr_mm_hitmarker ""			// INT - hitmarker options (DEFAULT: 0 | CHOICES: 0 = no marker, 1 = standard marker bolt weapons, 2 = standard marker all weapons, 3 = color marker all weapons and 4 = color marker bolt weapons)
+	set scr_mm_hitmarker_noscale ""		// BOOL - fixed size hitmarker (DEFAULT: false)
+	set scr_mm_damagemarker ""		// BOOL - show damage dealt (DEFAULT: false | WARNING: should probably not be used with lots of players)
+	set scr_mm_damagemarker_minus ""	// BOOL - use a minus instead of a pluss (DEFAULT: false)
+	set scr_mm_instantkill ""		// BOOL - enable instant kill (bolt weapons) (DEFAULT: false)
+	set scr_mm_headshots ""			// BOOL - headshots only
+	set scr_mm_fastfire ""			// INT - amount of fastfires before punishment (DEFAULT: 0 | CHOICES: 0 to disable, <num> fast fires or -1 for unlimited fastfire with no damage on hit players)
+	set scr_mm_fastfireaction ""		// STRING - punishment for fastfire (DEFAULT: "suicide" | CHOICES: "suicide", "disarm" or "spectator")
+	set scr_mm_weapon32 ""			// BOOL - enable or disable weapon32 (DEFAULT: false)
+	set scr_mm_stuckmap ""			// BOOL - enable map restarts on empty server to prevent stuck timer (DEFAULT: true)
+	set scr_mm_mapobjects ""		// BOOL - remove objects from map (DEFAULT: false)
+	set scr_mm_quickcommandlimit ""		// BOOL - enable quick commands max limit (DEFAULT: 5)
+	set scr_mm_nnn ""			// INT - number of seconds to kick 999 player (DEFAULT: 60)
+	set scr_mm_spawnprotection ""		// INT - number of seconds to protect a player on spawn (DEFAULT: 0)
+	set scr_mm_rcm_compatibility ""		// BOOL - adds log output compatible with RCM (DEFAULT: false)
+
+	set scr_mm_commands ""			// BOOL - enable MiscMod commands (DEFAULT: false)
+	set scr_mm_groups ""			// STRING - user defined groups (FORMAT: "groupname1;groupname2" | INFO: You can override group 'default' by specifying it.)
+	set scr_mm_users_<group> ""		// STRING - <group> as defined in scr_mm_groups (FORMAT: "username1:password1 username2:password2")
+	set scr_mm_perms_<group> ""		// STRING - <group> as defined in scr_mm_groups (FORMAT: "*:<id>:<id1>-<id2>:!<id>" | NOTE: Grant permissions are evaluated first. Not permissions must be before grant permissions and wildcard permission is evaluated last.)
+	set scr_mm_cmd_prefix ""		// STRING - in game command prefix (DEFAULT: "!")
+	set scr_mm_cmd_nameprefix ""		// STRING - in game name prefix (DEFAULT: "[MiscMod]")
+	set scr_mm_cmd_maps ""			// STRING - specify maps allowed with !map command (DEFAULT: "mp_harbor mp_brecourt mp_carentan mp_railyard mp_dawnville mp_depot mp_rocket mp_pavlov mp_powcamp mp_hurtgen mp_ship mp_chateau")
+	set scr_mm_cmd_path ""			// STRING - specify working directory for miscmod_bans.dat file (DEFAULT: "")
+
+	set scr_mm_mmkeys ""			// BOOL - enable MiscMods keys
+	set scr_mm_meleefight ""		// BOOL - enable melee fights on SD maps (1 on 1) (DEFAULT: false)
+	set scr_mm_meleefight_spawns ""		// INT - alternative spawn facing eachother on a random spot (DEFAULT: 0 | CHOICES: 1 do randomly a spawnpoint or 2 do always a spawnpoint)
+	set scr_mm_meleefight_winner ""		// BOOL - give a reward to showdown winner (DEFAULT: false)
+	set scr_mm_meleefight_announce ""	// BOOL - display a message when there is 2 players left on team (DEFAULT: false)
+	set scr_mm_meleefight_test ""		// BOOL - enable testing of showdown spawns when doing MiscMod keycombo (DEFAULT: false | NOTE: only used to debug spawnpoints)
+
+	set scr_mm_welcome1 ""			// STRING - prints welcome message + player name
+	set scr_mm_welcome2 ""			// STRING - prints welcome message
+	set scr_mm_welcome3 ""			// STRING - prints welcome message
+	set scr_mm_repeatwelcome ""		// BOOL - repeat welcome messages on every round
+
+	set scr_mm_mapvote ""			// BOOL - enable or disable mapvoting
+	set scr_mm_mapvotetime ""		// INT - mapvote duration (DEFAULT: 15s | MIN: 10s | MAX: 60s)
+	set scr_mm_mapvotereplay ""		// BOOL - display replay map choice (replay this map) (DEFAULT: false)
+	set scr_mm_mapvoterandom ""		// BOOL - display random map choice (mystery map) (DEFAULT: false)
+	set scr_mm_mapvotegametype ""		// BOOL - display gametype on winning map screen (DEFAULT: true)
+	set scr_mm_mapvotebans ""		// INT - amount of rounds to ignore a map (DEFAULT: 0 | WARNING: (TOTAL_MAPS - 5) = MAX)
+	set scr_mm_mapvotesound ""		// BOOL - play beep sound on vote choice (DEFAULT: false)
+
+	set scr_mm_anticamp ""			// BOOL - enable anticamp features
+	set scr_mm_spawncamprange ""		// INT - range in units to untrigger spawncamper (DEFAULT: 100)
+	set scr_mm_spawncamper ""		// INT - time before punishment (DEFAULT: 20s)
+	set scr_mm_anticamprange ""		// INT - range in units to untrigger anticamper (DEFAULT: 50)
+	set scr_mm_anticamper ""		// INT - time before punishment (DEFAULT: 30s)
+	set scr_mm_campaction ""		// STRING - action to take as punishment (DEFAULT: "compass" | CHOICES: "spectator", "compass" or "suicide")
+	
+	set scr_mm_restrict_<weapon> ""		// INT - restrict a weapon to a specific ammount (overrides weapon_assign)
+	set scr_mm_allow_pistols ""		// INT - enable pistols (DEFAULT: "")
+	set scr_mm_allow_grenades ""		// INT - restrict ammount of grenades (DEFAULT: "")
+
+	// Example map rotation
+	set sv_mapRotation "gametype sd map mp_harbor map mp_brecourt map mp_carentan map mp_railyard map mp_dawnville map mp_depot map mp_rocket map mp_pavlov map mp_powcamp map mp_hurtgen"
+
+	// Example map rotation extended (optional)
+	set sv_mapRotation1 "gametype dm map mp_harbor map mp_brecourt map mp_carentan map mp_railyard map mp_dawnville map mp_depot map mp_rocket map mp_pavlov map mp_powcamp map mp_hurtgen"
+	set sv_mapRotation2 "gametype re map mp_harbor map mp_brecourt map mp_carentan map mp_railyard map mp_dawnville map mp_depot map mp_rocket map mp_pavlov map mp_powcamp map mp_hurtgen"
+	set sv_mapRotation3 "gametype tdm map mp_harbor map mp_brecourt map mp_carentan map mp_railyard map mp_dawnville map mp_depot map mp_rocket map mp_pavlov map mp_powcamp map mp_hurtgen"
+  
+3) COMMANDS
+
+	NOTE: <num> can be replaced with a string and a player number will be matched based on the string.
+
+	Command:			Description:					Permission ID:
+	
+	!login <user> <pass>		Login to access commands.			0 - always default
+	!help				Display this help.				1 - default
+	!version			Display MiscMod version.			2 - default
+	!name <new name>		Change name.					3 - default
+	!fov <value>			Set field of view.				4 - default
+	!rename <num> <new name>	Change name of a player.			5
+	!logout				Logout.						6
+	!say <message>			Say a message with group as prefix.		7
+	!saym <message>			Print a message in the middle of the screen.	8
+	!sayo <message>			Print a message in the obituary.		9
+	!kick <reason>			Kick a player.					10
+	!reload				Reload MiscMod commands and settings.		11
+	!restart (*)			Restart map (soft).				12
+	!endmap				End the map.					13
+	!map <mapname> (gametype)	Change map and gametype.			14
+	!status				List players.					15
+	!mute <num>			Mute player.					16
+	!unmute <num>			Unmute player.					17
+	!warn <num> <message>		Warn player.					18
+	!kill <num>			Kill player.					19
+	!weapon <num> <weapon>		Give weapon to player.				20
+	!heal <num>			Heal player.					21
+	!invisible <on|off>		Become invisible.				22
+	!ban <num>			Ban player.					23
+	!unban <ip>			Unban player.					24
+	!pm <player> <message>		Private message a player.			25
+	!re <message>			Respond to private message.			26
+	!who				Display logged in users.			27
+
+	!drop <num> <height>		Drop a player.					28
+	!spank <num> <time>		Spank a player.					29
+	!slap <num> <damage>		Slap a player.					30
+	!blind <num> <time>		Blind a player.					31
+	!runover <num>			Run over a player.				32
+	!squash <num>			Squash a player.				33
+	!rape <num>			Rape a player.					34
+	!toilet <num>			Turn player into a toilet.			35
+	
+	!explode <num>			Explode a player.				36
+	!force <axis|allies|spectator> <num|all> (...)	Force players to team.		37
+	!mortar <num>			Mortar a player.				38
+	!matrix				Matrix.						39
+	!burn <num>			Burn a player.					40
+	!cow <num>			BBQ a player.					41
+	!disarm <num>			Disarm a player.				42
+	
+	!os				Snipers only.					43
+	!aw (*)				All weapons (1 sniper).				44
+	!omp				Only machine guns.				45
+	!rifles <on|off|only>		Rifle settings.					46
+	!health <off|0|1|2|3>		Health settings.				47
+	!grenade <off|0|1|2|3|reset>	Grenade settings.				48
+	!pistols <on|off|reset>		Pistol settings.				49
+	!1sk <on|off>			Instant kill.					50
+	!roundlength <time>		Set roundlength. (sd|re)			51
+
+4) ABOUT
+
+	This is a CoDaM PowerServer replacement aimed at improving stability and adding some different kind of features to CoDaM.
+
+5) CREDITS
+
+	MiscMod made by Cato
+	Mapvote based on DaMoLe's mapvote for CoD2
+	Spawnfix based on LaZy's spawnfix for jump server
+	Some 'fun' admin commands based on Cheese's admin commands
+	Some 'fun' admin commands based on PowerServer's commands
+
+6) CHANGELOG
+
+	2.7.1
+		- Fixes bug with current working directory, default is now set to fs_basepath + "/main/"
+		+ New CVAR to specify a different working directory or share the same directory
+	
+	2.7.2
+		+ Added option for rifles only to !rifles command
+		- Fixes problem with instantkill and damagemarker enabled at the same time (negative value)
+		* Minor code cleanup
+		
+	2.7.3
+		! Commands have new numbers, permissions must be updated.
+		+ Added !who command to display who is logged in
+		+ Added !pm command
+		+ Added !re command
+		+ Added 999 kicker based on timer
+
+	2.7.4
+		+ Spawn protection
+		+ RCM compatibility

@@ -1,0 +1,28 @@
+Installation 
+
+1. Extract the following files to your Call of Duty\Main folder. 
+___CoDaM_PowerServer__.pk3
+CoDaM_PowerServer.cfg 
+
+2. Add the following to your modlist.gsc.
+[[ register ]]( "PowerServer", codam\psv_main::main, "powerserver" );
+
+3. Add the following to your server's config. 
+exec CoDaM_PowerServer.cfg
+
+4. Open CoDaM_PowerServer.cfg and configure cvars as you desire. 
+ 
+  
+Requirements: 
+ - Call of Duty 1.4 Dedicated Server 
+ - CoDaM 1.3 
+ 
+  
+Notes: 
+ - If you are using NC's MapVote or NC's Welcome Message please remove it from 
+   your modlist.gsc, PowerServer includes a built-in updated version of these plugins. 
+ - Be certain to remove any old registration lines for PowerServer from your modlist.gsc. 
+ 
+For the latest info on PowerServer visit http://www.newevolution.net
+
+ 

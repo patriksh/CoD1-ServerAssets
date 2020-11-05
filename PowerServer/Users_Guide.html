@@ -1,0 +1,448 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>PowerServer, CoDaM Plugin for Call of Duty Game Servers</title>
+<link href="powerserver.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="28404D" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="600" border="0" align="left" cellpadding="2" cellspacing="1">
+  <tr> 
+    <td><img src="img_clearpixel.gif" width="20" height="2"></td>
+  </tr>
+  <tr> 
+    <td class="SectionTitles"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="50%" class="SectionTitles"><font color="#FFFFFF" size="4" face="Arial, Helvetica, sans-serif"><strong>PowerServer 
+            User's Guide</strong></font></td>
+          <td width="50%"><div align="right"></div></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><strong><font color="#FFFFFF" size="3" face="Arial, Helvetica, sans-serif">Command 
+      Usage<a name="A1"></a></font></strong></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">Commands 
+      are issued in the following format.<br>
+      <strong>/rcon command &quot;[commandname] [arguments]&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"> 
+      For instance, to <strong>burn</strong> player number 6, you would issue 
+      the following command in the console.<br>
+      <strong>/rcon command &quot;burn 6&quot;</strong> </font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"> 
+      You can issue multiple commands by separating them with a semi-colin.<br>
+      <strong>/rcon command &quot;burn 6;mortar 12&quot; </strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">Many 
+      commands can also be performed on multiple players. To <strong>force</strong> 
+      players 5 and 9 to join spectator you'd issue the following command.<br>
+      <strong>/rcon command &quot;force spectator 5 9&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">Commands 
+      without arguments do not require opening or closing quotation marks. For 
+      instance, the command <strong>endmap,</strong> does not have any arguments.<br>
+      <strong>/rcon command endmap</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><strong><font color="#FFFFFF" size="3" face="Arial, Helvetica, sans-serif">Punishment 
+      Commands<a name="A2"></a></font></strong></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">PowerServer 
+      features several different methods to wreak havoc on llamas, cheaters, team 
+      stackers and other undesirables via player punishment commands. In all cases, 
+      the player entity number is used to target a specific COD player. You can 
+      view the player numbers by typing <strong>/rcon status</strong> in the console.</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">The<strong> 
+      burn</strong> command lights a player on fire, killing them. Example usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>rcon 
+      command &quot;burn 7&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">The 
+      <strong>explode</strong> command blows up a player, killing them. Example 
+      usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;explode 16&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">The 
+      <strong>mortar</strong> command shoots a series of mortars at a player's 
+      position until he has died. Example usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;mortar 5&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">The 
+      <strong>cow</strong> command turns a player into a flaming cow, burning 
+      them until they are dead. Example usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;cow 3&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">The 
+      <strong>disarm</strong> command causes a player to drop all of his weapons, 
+      including both weapon slots, grenades and pistol. Example usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;disarm 14&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><strong><font color="#FFFFFF" size="3" face="Arial, Helvetica, sans-serif">Map 
+      Voting<a name="A3"></a></font></strong></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">When 
+      enabled, map voting occurs at the end of each map after the scoreboard has 
+      been displayed. Players are presented with three choices randomly selected 
+      from the map vote rotation. In addition to this a gametype can be assigned 
+      to each map candidate. During map voting the gametype assigned to the map 
+      candidate is displayed to the right of the map. If there is no assigned 
+      gametype for a map candidate, then whatever gametype the server is currently 
+      running is used. </font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">Players 
+      vote by pressing their fire button until the indicator (the star icon) is 
+      positioned next to their desired choice. Their latest selection is printed 
+      in the bottom left corner of the screen. </font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">The 
+      admin has the capability of overruling the players' votes and forcing a 
+      particular map candidate to win via the<strong> forcevote </strong>command. 
+      </font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;forcevote [map number]&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">The 
+      map number is either the number 1, 2 or 3 and represents the first, second 
+      and third map choices displayed respectively. Example usage: </font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;forcevote 2&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">The 
+      above command would force the second displayed map candidate to win. </font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><strong><font color="#FFFFFF" size="3" face="Arial, Helvetica, sans-serif">Match 
+      Modes<a name="A4"></a></font></strong></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">PowerServer's 
+      Match Mode features makes the administration of competitive matches unbelievably 
+      simple. Match Mode has three different internal modes, PreMatch, Count Down 
+      and Live. To place the server into PreMatch simply use the <strong>matchsetup</strong> 
+      command. Example usage.</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command matchsetup</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">During 
+      PreMatch the HUD displays the status of important cvars such as timelimit, 
+      scorelimit, roundlength, freelook, teamspec and others. If the map should 
+      end during PreMatch because the timelimit or scorelimit is hit, the server 
+      will restart the map, keep all players on their current teams and place 
+      the server back into PreMatch. This prevents the map from ending and the 
+      server switching to another map while players are still getting prepared. 
+      To prevent players from killing each other and interrupting team or clan 
+      communications all players are made invulnerable to damage during PreMatch. 
+      </font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">PowerServer 
+      comes pre-configured with nearly every league and ladder config available 
+      for Call of Duty. The PreMatch HUD displays which, if any, match config 
+      is currently loaded. The following are all available commands that will 
+      load the appropriate league or ladder config:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command cal<br>
+      /rcon command twl_tdm_ladder<br>
+      /rcon command twl_tdm_league<br>
+      /rcon command twl_sd_ladder<br>
+      /rcon command twl_sd_league<br>
+      /rcon command twl_re_ladder<br>
+      /rcon command twl_hq_ladder<br>
+      /rcon command cb_tdm_ladder<br>
+      /rcon command cb_hq_ladder<br>
+      /rcon command cb_re_ladder<br>
+      /rcon command cb_sd_ladder <br>
+      /rcon command ugs </strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">When 
+      you execute any of the above commands several things happens. FIrst, PowerServer 
+      loads the appropriate game and server settings for each config. Secondly, 
+      if the current gametype does not match the loaded config, it changes the 
+      gametype and reloads the map. And lastly, PowerServer disables all other 
+      CoDaM plugins, to prevent any other plugins from interfering with league 
+      gameplay. PowerServer's own Punishment Commands, Random Mortars, Map Voting, 
+      Spawn Protection and Mercy Limit are also disabled during MatchMode. You 
+      can issue any of the config commands any number of times during PreMatch 
+      mode. </font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">One 
+      of the most powerful features of MatchMode is the Ready Up button. During 
+      PreMatch players can toggle their Ready Up status by hitting their USE button. 
+      The PreMatch HUD displays how many players are currently ready on each team. 
+      In addition, every ten seconds the server prints a list of players who are 
+      not Ready. </font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">Once 
+      all players are Readied Up, the server will automatically start the Count 
+      Down. In this manner, once a server is placed into PreMatch mode a match 
+      can be ran virtually unattended. Admins can also force the match to start 
+      with the <strong>matchstart</strong> command. Example usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command matchstart</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">The 
+      Count Down displays on the HUD and lasts for fifteen seconds. When the Count 
+      Down hits zero, the server restarts the map, keeps all players on the same 
+      team and puts the server into Live mode. Inside Live mode, PowerServer is 
+      virtually unnoticeable aside from a small message in the corner of the HUD 
+      displaying &quot;MatchMode&quot; and if the teams are locked or unlocked. 
+      PowerServer's ability to lock teams means that players can connect and spectate 
+      the match without being able to interfere in the game by joining up. </font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">When 
+      the match ends, PowerServer displays the scoreboard twice as long as normal, 
+      allowing all players ample time to check and record scores and to get screenshots. 
+      After that, the map is restarted, players are kept on the same teams and 
+      the server is placed back into Match Setup mode. </font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">During 
+      Live mode the <strong>matchsetup</strong> command can be issued anytime 
+      to place the server back into Match Setup. Match Mode can be shut off at 
+      anytime by using the <strong>matchstop</strong> command. Example usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command matchstop</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><strong><font color="#FFFFFF" size="3" face="Arial, Helvetica, sans-serif">Team 
+      &amp; Player Control<a name="A5"></a></font></strong></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">PowerServer 
+      includes a variety of methods for controlling which teams players are assigned 
+      to and can join. The <strong>teamlock</strong> command can prevent any player 
+      from changing teams, including spectators. When the teams are locked and 
+      a player attempts to switch teams their menu is closed and a message is 
+      displayed telling them that the teams are currently locked. Example usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command teamlock</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">It 
+      can also be used to prevent individual players from changing teams. Example 
+      usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;teamlock 7&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"> 
+      The command <strong>teamunlock</strong> can be used in the same format to 
+      unlock the teams or to unlock individual players. Example usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command teamunlock</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;teamunlock 7&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">PowerServer 
+      also allows you to force individual players to a different team with the 
+      <strong>force </strong> command. Example usage: </font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;force axis 3&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;force allies 12&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;force spectator 6&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">You 
+      can even use the <strong>force</strong> onmultiple players with one command. 
+      Example usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;force allies 5 7 13 20&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">By 
+      using the <strong>forceallspec</strong> command, all players on either team 
+      can be forced to become spectators. Example usage: </font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command forceallspec</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">Admins 
+      also have the ability to assign a specific clantag to either axis or allies 
+      using the <strong>axisclan</strong> and <strong>alliedclan</strong> commands. 
+      When a clan assignment is issued, PowerServer will check all player names 
+      and force anyone with the designated clan tag to join the appropriate team. 
+      In addition to this, if a player with a designated clantag attempts to join 
+      a team they will be autoswitched to whatever team their clantag was assigned 
+      to. Players with designated clantags are allowed to go spectator whenever 
+      they like. Example usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;axisclan [BY0B]&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;alliedclan -=S0bz=-&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">A 
+      clantag assignment can be cleared at any time be issuing the <strong>axisclan</strong> 
+      or <strong>alliedclan</strong> commands without arguments. Example usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command axisclan</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command alliedclan</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">Clantag 
+      assignments can also be swapped with the <strong>swapclans</strong> command. 
+      Example usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command swapclans</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">Any 
+      players who do not have an assigned clantag, can be made to join a specfic 
+      team using the <strong>noclan</strong> command. Example usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;noclan axis&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;noclan allies&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;noclan spectator&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><strong><font color="#FFFFFF" size="3" face="Arial, Helvetica, sans-serif">Miscellaneous 
+      Commands<a name="A6"></a></font></strong></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">You 
+      can print a line of bold text across all players HUD using the <strong>say</strong> 
+      command. Example usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command &quot;say d00dz this game r0x0rz j00 b0x0rz!!!&quot;</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">To 
+      end a map immediately and display the scoreboard use the <strong>endmap</strong> 
+      command. Please note, that this command is disabled in MatchMode. Example 
+      usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command endmap</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif">For 
+      admins who like to have a little fun PowerServer includes a fun little command 
+      called <strong>matrix</strong>. Once issued the &quot;matrix mode&quot; 
+      lasts for approximately ten seconds. The <strong>matrix</strong> command 
+      cannot be explained. It must be seen. Example usage:</font></td>
+  </tr>
+  <tr> 
+    <td class="Text"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif"><strong>/rcon 
+      command matrix</strong></font></td>
+  </tr>
+  <tr> 
+    <td class="Text">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>
